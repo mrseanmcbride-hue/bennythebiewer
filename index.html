@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Benny the Biewer | Adventures, Travel & Life</title>
+
+  <meta name="description" content="Meet Benny the Biewer — a little dog living a big life through travel, adventures, collaborations and everyday moments.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #2d2d2d;
+      background: #f8f6f1;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(248, 246, 241, 0.94);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 130px 7% 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(255,255,255,0.30), rgba(255,255,255,0.30)),
+        linear-gradient(135deg, #dce5df, #f4eee5);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(58px, 10vw, 110px);
+      line-height: 0.95;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 19px;
+      color: #555;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 14px 30px;
+      border: 1px solid #333;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      transition: 0.25s;
+    }
+
+    .button:hover {
+      background: #333;
+      color: white;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 110px 10%;
+      text-align: center;
+      background: #fff;
+    }
+
+    .intro h2,
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 48px;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      max-width: 720px;
+      margin: auto;
+      font-size: 18px;
+      color: #666;
+    }
+
+    /* FEATURE GRID */
+
+    .features {
+      padding: 90px 7%;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .feature {
+      min-height: 400px;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: #ddd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature:nth-child(1) {
+      background: linear-gradient(145deg, #d9e2dc, #aebeb5);
+    }
+
+    .feature:nth-child(2) {
+      background: linear-gradient(145deg, #e9dfd1, #cdbba5);
+    }
+
+    .feature:nth-child(3) {
+      background: linear-gradient(145deg, #dedede, #b7b7b7);
+    }
+
+    .feature h3 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #444;
+    }
+
+    /* COLLABORATION */
+
+    .collab {
+      padding: 120px 10%;
+      text-align: center;
+      background: #e9e5dc;
+    }
+
+    .collab p {
+      max-width: 680px;
+      margin: auto;
+      color: #555;
+      font-size: 18px;
+    }
+
+    /* INSTAGRAM */
+
+    .instagram {
+      padding: 100px 7%;
+      text-align: center;
+      background: #fff;
+    }
+
+    .instagram-handle {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 7%;
+      text-align: center;
+      background: #2f3431;
+      color: #f5f2eb;
+    }
+
+    footer h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    .social {
+      margin-top: 20px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro h2,
+      .section-title {
+        font-size: 38px;
+      }
+
+      .feature {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">BENNY THE BIEWER</div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#adventures">Adventures</a>
+      <a href="#work">Work With Us</a>
+      <a href="#instagram">Instagram</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">A little dog. A very big life.</div>
+
+      <h1>Benny</h1>
+
+      <p>
+        Biewer Terrier • Traveler • Adventure Pup • Professional Good Boy
+      </p>
+
+      <a class="button" href="#about">
+        Meet Benny
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="intro" id="about">
+
+    <h2>Meet Benny</h2>
+
+    <p>
+      Benny is a Biewer Terrier with a big personality, a love for adventure,
+      and a talent for finding the best seat at every restaurant, beach,
+      coffee shop and destination along the way.
+    </p>
+
+  </section>
+
+
+  <!-- ADVENTURES -->
+
+  <section class="features" id="adventures">
+
+    <div class="section-title">
+      Life with Benny
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <h3>Travel</h3>
+        <p>
+          From Florida beaches to cities across the country,
+          Benny goes wherever the adventure takes him.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Adventures</h3>
+        <p>
+          Parks, patios, boats, markets, sunsets and everything
+          in between. Life is better with a Biewer.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Everyday</h3>
+        <p>
+          Fetch in the driveway. A morning walk. A favorite toy.
+          Sometimes the smallest moments become the best memories.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORK WITH US -->
+
+  <section class="collab" id="work">
+
+    <div class="eyebrow">Let's work together</div>
+
+    <h2 class="section-title">
+      Work With Benny
+    </h2>
+
+    <p>
+      Benny partners with brands that fit his lifestyle —
+      from pet products and accessories to hotels, travel,
+      destinations and experiences.
+    </p>
+
+    <a class="button" href="mailto:hello@bennythebiewer.com">
+      Start a Conversation
+    </a>
+
+  </section>
+
+
+  <!-- INSTAGRAM -->
+
+  <section class="instagram" id="instagram">
+
+    <div class="eyebrow">Follow the adventures</div>
+
+    <div class="instagram-handle">
+      @leaveittobiewer
+    </div>
+
+    <p>
+      More Benny, more adventures and a whole lot of Biewer energy.
+    </p>
+
+    <a
+      class="button"
+      href="https://www.instagram.com/leaveittobiewer/"
+      target="_blank"
+    >
+      Visit Instagram
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <h2>Benny the Biewer</h2>
+
+    <p>
+      Little guy. Big life.
+    </p>
+
+    <div class="social">
+      © 2026 Benny the Biewer
+    </div>
+
+  </footer>
+
+</body>
+</html>
